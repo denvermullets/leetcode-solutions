@@ -6,7 +6,7 @@
 
 // Input: nums = [0,0,1,1,1,2,2,3,3,4]
 // Output: 5, nums = [0,1,2,3,4]
-// Explanation: Your function should return length = 5, with the first five elements 
+// Explanation: Your function should return length = 5, with the first five elements
 // of nums being modified to 0, 1, 2, 3, and 4 respectively. It doesn't matter what
 // values are set beyond the returned length.
 
@@ -17,21 +17,47 @@ const removeDupes = (nums) => {
 
   let pointerA = 0 // this is the 1st element in the array we will compare with
   // pointerA is basically the count of unique items in the array
-  for ( let pointerB = 1; pointerB < nums.length; pointerB++) {
+  for (let pointerB = 1; pointerB < nums.length; pointerB++) {
     // so we're going to compare pointerA to pointerB and move forward in the array
     // if the pointer is unique, move it to the next spot in the array
-    if ( nums[pointerA] !== nums[pointerB] ) {
+    if (nums[pointerA] !== nums[pointerB]) {
       // we have found the 1st appearance of a non duplicate number
       // now we move pointerA to the next element and replace that with the unique number
       pointerA++
-      nums[pointerA] = nums[pointerB] 
+      nums[pointerA] = nums[pointerB]
     }
   }
   return pointerA + 1 // need to add 1 to the array count since it starts at 0
-} 
+}
 
-let nums = [-1,0,0,0,0,0,1,2,3,4,5,5,5,6,6,7,7,7,8,8,8,8,8,8,9,10]
+let nums = [
+  -1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  5,
+  5,
+  6,
+  6,
+  7,
+  7,
+  7,
+  8,
+  8,
+  8,
+  8,
+  8,
+  8,
+  9,
+  10,
+]
 
 let solved = removeDupes(nums)
 console.log(solved)
-
